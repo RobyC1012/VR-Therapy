@@ -1,0 +1,28 @@
+.square {
+  border-radius: 0px;
+}
+
+.jumbotron {
+  background-image: linear-gradient(to right, #007bff, #000);
+  color: #fff;
+}
+
+.avatar-card {
+  margin-top: -10px;
+  box-shadow: 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 30px 5px rgba(0,0,0,0.12), 0px 8px 10px -5px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;     
+}
+
+.result-avatar {
+  margin-top: -10px;
+  box-shadow: 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 30px 5px rgba(0,0,0,0.12), 0px 8px 10px -5px rgba(0,0,0,0.2);
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: none;
+  border-radius: 100px;
+  margin-left: 15px;
+}
