@@ -9,7 +9,10 @@ const UserIndex = () => {
 
   return (
     <UserRoute>
-      <h1 className=" text-center">Dashboard</h1>
+      <div>
+        <h1 className="text-center">Dashboard</h1>
+        <hr className="text-danger" />
+      </div>
     </UserRoute>
   );
 };

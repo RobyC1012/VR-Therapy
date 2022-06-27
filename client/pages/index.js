@@ -17,7 +17,6 @@ const Index = () => {
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <img src="/img/bg1.png" ></img>
         </div>
-      
       </Content>
       <Footer style={{ textAlign: 'center' }}>© {(new Date().getFullYear())} Make IT Oradea, All Rights Reserved</Footer>
     </Layout>

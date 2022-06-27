@@ -9,6 +9,8 @@ import {
   UserAddOutlined,
   CarryOutOutlined,
   TeamOutlined,
+  InfoCircleOutlined,
+  PhoneOutlined,
 } from "@ant-design/icons";
 import { Context } from "../context";
 import axios from "axios";
@@ -49,7 +51,25 @@ const TopNav = () => {
         </Link>
       </Item>
 
-    
+      <Item 
+        key="/aboutus" 
+        onClick={(e) => setCurrent(e.key)} 
+        icon={<InfoCircleOutlined />}>
+        <Link href="/aboutus">
+          <a>About us</a>
+        </Link>
+      </Item>
+
+      <Item 
+        key="/contact" 
+        onClick={(e) => setCurrent(e.key)} 
+        icon={<PhoneOutlined />}>
+        <Link href="/contact">
+          <a>Contact</a>
+        </Link>
+      </Item>
+
+
       {user === null && (
         <>
           <Item

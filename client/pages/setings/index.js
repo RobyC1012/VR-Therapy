@@ -9,7 +9,10 @@ const SetingsIndex = () => {
 
   return (
     <UserRoute>
-      <h1 className="text-center ">Dashboard Setari </h1>
+      <div>
+        <h1 className="text-center">Settings</h1>
+        <hr className="text-danger" />
+      </div>
     </UserRoute>
   );
 };
