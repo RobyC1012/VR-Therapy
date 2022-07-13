@@ -64,23 +64,27 @@ const Login = () => {
       <Content style={{ padding: '0 50px'}}>  
       <div className="container col-md-4 offset-md-4 pb-5">
         <form onSubmit={handleSubmit}>
-          <input
+          <div className="input-group">
+            <input 
             type="email"
-            className="form-control mb-4 p-4"
+            id="email"
+            required class="input"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Introdu email"
-            required
-          />
+            />
+            <label for="email" className="input-label">Email address</label>
+          </div>
 
-          <input
-            type="password"
-            className="form-control mb-4 p-4"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Introdu parola"
-            required
-          />
+          <div className="input-group">
+            <input
+              type="password"
+              id="password"
+              required class="input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label for="password" className="input-label">Password</label>
+          </div>
 
           <button
             type="submit"
@@ -105,7 +109,7 @@ const Login = () => {
         </p>
       </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>--© {(new Date().getFullYear())} Make IT Oradea, All Rights Reserved</Footer>
+      <Footer style={{ textAlign: 'center' }}>© {(new Date().getFullYear())} Make IT Oradea, All Rights Reserved</Footer>
     </Layout>
   );
 };

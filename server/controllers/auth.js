@@ -168,3 +168,24 @@ export const resetPassword = async (req, res) => {
     return res.status(400).send("Error! Try again.");
   }
 };
+
+export const adminPanel = async (req, res) => {
+  try{
+    const user = await User.findById(req.user._id).select("-password").exec();
+    if(user.role !== "Admin") return res.status(403).send("Forbidden");
+    return res.json({ ok: true });
+  }
+  catch(err){
+    console.log(err);
+  }
+};
+
+export const appUser = async (req, res) => {
+  try{
+    const users = await User.find({}).exec();
+    return res.json({ ok: true, users });
+  }
+  catch(err){
+    console.log(err);
+  }
+}

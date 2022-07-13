@@ -74,17 +74,19 @@ const ForgotPassword = () => {
       <h1 className="jumbotron text-center bg-primary square">
         Recuperare Parola
       </h1>
-      <Content>
+      <Content  style={{ padding: '0 50px'}}>
       <div className="container col-md-4 offset-md-4 pb-5">
         <form onSubmit={success ? handleResetPassword : handleSubmit}>
-          <input
-            type="email"
-            className="form-control mb-4 p-4"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Introdu email"
-            required
-          />
+          <div className="input-group">
+            <input
+              type="email"
+              id="email"
+              required class="input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label for="email" className="input-label">Email address</label>
+          </div>
           {success && (
             <>
               <input
@@ -109,15 +111,15 @@ const ForgotPassword = () => {
 
           <button
             type="submit"
-            className="btn btn-primary btn-block p-2"
+            className="btn btn-block btn-primary"
             disabled={loading || !email}
           >
-            {loading ? <SyncOutlined spin /> : "Trimite"}
+            {loading ? <SyncOutlined spin /> : "Submit"}
           </button>
         </form>
       </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>--© {(new Date().getFullYear())} Make IT Oradea, All Rights Reserved</Footer>
+      <Footer style={{ textAlign: 'center' }}>© {(new Date().getFullYear())} Make IT Oradea, All Rights Reserved</Footer>
     </Layout>
   );
 };

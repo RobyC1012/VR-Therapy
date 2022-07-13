@@ -55,42 +55,49 @@ const Register = () => {
         <TopNav />
       </Header>
       <h1 className="jumbotron text-center bg-primary square">Inregistrare</h1>
-      <Content>
+      <Content  style={{ padding: '0 50px'}}>
       <div className="container col-md-4 offset-md-4 pb-5">
         <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            className="form-control mb-4 p-4"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Introdu nume"
-            required
-          />
 
-          <input
-            type="email"
-            className="form-control mb-4 p-4"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Introdu email"
-            required
-          />
+          <div className="input-group">
+            <input
+              type="text"
+              id="name"
+              required class="input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label for="name" className="input-label">Name</label>
+          </div>
 
-          <input
-            type="password"
-            className="form-control mb-4 p-4"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Introdu parola"
-            required
-          />
+          <div className="input-group">
+            <input
+              type="email"
+              id="email"
+              required class="input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label for="email" className="input-label">Email address</label>
+          </div>
+
+          <div className="input-group">
+            <input
+              type="password"
+              id="password"
+              required class="input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label for="password" className="input-label">Password</label>
+          </div>
 
           <button
             type="submit"
             className="btn btn-block btn-primary"
             disabled={!name || !email || !password || loading}
           >
-            {loading ? <SyncOutlined spin /> : "Trimite"}
+            {loading ? <SyncOutlined spin /> : "Submit"}
           </button>
         </form>
 
@@ -102,7 +109,7 @@ const Register = () => {
         </p>
       </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>--© {(new Date().getFullYear())} Make IT Oradea, All Rights Reserved</Footer>
+      <Footer style={{ textAlign: 'center' }}>© {(new Date().getFullYear())} Make IT Oradea, All Rights Reserved</Footer>
     </Layout>
   );
 };

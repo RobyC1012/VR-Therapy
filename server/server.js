@@ -4,6 +4,7 @@ import { readdirSync } from "fs";
 import mongoose from "mongoose";
 import csrf from "csurf";
 import cookieParser from "cookie-parser";
+
 const morgan = require("morgan");
 require("dotenv").config();
 const authRoutes = require("./routes/auth");
@@ -29,6 +30,7 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
+
 
 // route
 readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));

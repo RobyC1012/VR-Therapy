@@ -4,11 +4,12 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import TopNav from "../TopNav";
 import { Layout, Menu } from "antd";
-import { SyncOutlined, LineChartOutlined, PieChartOutlined, SettingOutlined, AppstoreOutlined } from "@ant-design/icons";
+import { SyncOutlined, LineChartOutlined, PieChartOutlined, SettingOutlined, AppstoreOutlined, HistoryOutlined } from "@ant-design/icons";
 import { Context } from "../../context";
 import { useContext } from "react";
 import { LoginOutlined, CoffeeOutlined } from "@ant-design/icons";
 import { toast } from "react-toastify";
+import router from "next/router";
 
 
 const { Item, SubMenu, ItemGroup } = Menu;
@@ -85,7 +86,12 @@ const UserRoute = ({ children }) => {
             <Link href="/user">
               Dashboard
             </Link>
-          </Menu.Item>    
+          </Menu.Item>
+          <Menu.Item key="/appointments" onClick={(e) => setCurrent(e.key)}  icon={<HistoryOutlined/>}>
+            <Link href="/appointments">
+              Appointments
+            </Link>
+          </Menu.Item>
           <Menu.Item key="/therapy" onClick={(e) => setCurrent(e.key)}  icon={<LineChartOutlined />}>
             <Link href="/therapy">
               Therapy
@@ -144,7 +150,7 @@ const UserRoute = ({ children }) => {
               {children}
           </Content>
         )}      
-      <Footer style={{ textAlign: 'center' }}>--© {(new Date().getFullYear())} Make IT Oradea, All Rights Reserved</Footer> 
+      <Footer style={{ textAlign: 'center' }}>© {(new Date().getFullYear())} Make IT Oradea, All Rights Reserved</Footer> 
     </Layout>  
   </Layout>
   );
